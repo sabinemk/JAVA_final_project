@@ -10,13 +10,13 @@ public class dbConnection {
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java34", "root", "Spiegoshana");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java34", "root", "Kipsas19851018");
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM countries");
 
             while (rs.next()){
-                System.out.printf(" Country: %s Capital: %s  \n",
-                        rs.getString(1),rs.getString(2));
+                System.out.printf("CountryID %d Country:  %s Capital: %s Region: %s  \n",
+                        rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4));
             }
             con.close();
 
