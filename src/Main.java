@@ -1,13 +1,13 @@
-<<<<<<< HEAD
+// <<<<<<< HEAD -  these line was imported from git and
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Scanner;
-=======
+// =======
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
->>>>>>> 4f7c61625014183683c9481582c1b43f3558c57d
+// >>>>>>> 4f7c61625014183683c9481582c1b43f3558c57d
 public class Main {
     public static void main(String[] args) {
 
@@ -51,7 +51,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        Scanner scanner = new Scanner(System.in);
+        // Scanner scanner = new Scanner(System.in);
 
         boolean i = true;
 
@@ -69,7 +69,7 @@ public class Main {
                 System.out.println("Your inputted personal number is not valid.Enter valid personal number");
             } else {
                 System.out.println("Please enter username");
-                String username = scanner.nextLine();
+                String name = scanner.nextLine();
 
             }
         }
