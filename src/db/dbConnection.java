@@ -10,7 +10,7 @@ public class dbConnection {
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java34", "root", "Spiegoshana");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafinalprojectdb", "root", "0315");
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM countries");
 
