@@ -1,6 +1,10 @@
 import java.sql.*;
 
 public class database {
+    private static final String dbURL = "jdbc:mysql://localhost:3306/java34";
+    private static final String user ="root" ;
+    private static final String password ="Spiegoshana";
+
 
     public static void registerUser (Connection connection, String UserName, String FullName) throws SQLException {
 
@@ -18,11 +22,24 @@ public class database {
         }
     }
 
-    public static void logIn (Connection connection, String existingUserName) throws SQLException {
+    public static int logIn(Connection connection, String existingUserName) throws SQLException {
 
-        String sql = "SELECT UserName FROM gameUsers WHERE name = 'existingUserName'";
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(sql);
+        String sql;
+        try (Connection connection1 = DriverManager.getConnection(dbURL, user, password)) {
+            sql = "SELECT UserName FROM gameUsers WHERE UserName = 'existingUserName'";
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            } else {
+                return 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
 
 
     }

@@ -27,17 +27,17 @@ public class Main {
 
                 String action = scanner.nextLine().toLowerCase().trim();
 
-                if (action == "register") {
-                    System.out.println("enter a username");
+                if (action.equals("register")) {
+                    System.out.println("enter a new username");
                     String newUserName = scanner.nextLine();
 
-                    System.out.println("enter your name");
+                    System.out.println("enter your full name");
                     String newFullName = scanner.nextLine();
 
                     database.registerUser(connection, newUserName, newFullName);
 
-                } else if (action == "log in") {
-                    System.out.println("enter your username");
+                } else if (action.equals("log in")) {
+                    System.out.println("please, input your username");
                     String existingUserName = scanner.nextLine();
                     database.logIn(connection, existingUserName);
 
@@ -51,7 +51,9 @@ public class Main {
             e.printStackTrace();
         }
 
-        // Scanner scanner = new Scanner(System.in);
+
+
+        /* Scanner scanner = new Scanner(System.in);
 
         boolean i = true;
 
@@ -73,6 +75,8 @@ public class Main {
 
             }
         }
+
+         */
 
     }
 }
