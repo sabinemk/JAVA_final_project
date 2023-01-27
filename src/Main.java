@@ -13,7 +13,7 @@ public class Main {
 
         String dbURL = "jdbc:mysql://localhost:3306/java34";
         String username = "root";
-        String password = "Spiegoshana";
+        String password = "1234";
         Scanner scanner = new Scanner(System.in);
         char again = 'y';
 
@@ -51,7 +51,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        // Scanner scanner = new Scanner(System.in);
+       //Scanner scanner = new Scanner(System.in);
 
         boolean i = true;
 

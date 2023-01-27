@@ -29,7 +29,7 @@ public class QuizQuestionGenerator {
         int result = 0;
 
         try (Connection conn = DriverManager.getConnection(dbURL, username, password)) {
-            System.out.println("Welcome to Capital cities quiz! Here you can check you knowledge or learn capital cities of many countries around the world. Lets start!");
+            System.out.println("Welcome to Capital cities quiz! Here you can check your knowledge or learn capital cities of many countries around the world. Lets start!");
             System.out.println("Choose what you want to do: ");
             System.out.println("q- take quiz");
             System.out.println("r- check your previous score");
@@ -48,7 +48,7 @@ public class QuizQuestionGenerator {
                     }
                     while (choice.equalsIgnoreCase("e")) {
                         System.out.println("Capital cities of European countries: ");
-                        //EuropeCapitals(conn);
+                        EuropeCapitals(conn);
                         if (!continueOrEndQuiz()) break;
                     }
                     while (choice.equalsIgnoreCase("am")) {
@@ -60,15 +60,14 @@ public class QuizQuestionGenerator {
                         System.out.println("Capital cities of African countries: ");
                         AfricaCapitals(conn);
                         if (!continueOrEndQuiz()) break;
-                    }
-                    if (!endQuiz())
+                    } if (!endQuiz())
                         break;
                 }
 
             } else if (quiz == 'r') {
                 System.out.println("Your score is: ");
                 //calculateResults();
-                //continueOrEndQuiz();
+                //continueOrEndQuiz(); ????? or add a separate method to go back to menu ?
             } else if (quiz == 'e') {
                 System.out.println("See you next time! ");
             }
@@ -84,9 +83,9 @@ public class QuizQuestionGenerator {
         // tracking if ID is already used
         Random rand = new Random();
         Set<Integer> usedIDs = new HashSet<>(); // will store the previously generated random IDs.
-        int randomID = rand.nextInt(46) + 1; // generates a random number between 0 and 47 (inclusive) and then adds 1 to it, resulting in a random number between 1 and 3 (inclusive).
+        int randomID = rand.nextInt(47) + 1; // generates a random number between 0 and 47 (inclusive) and then adds 1 to it, resulting in a random number between 1 and 3 (inclusive).
         while (usedIDs.contains(randomID)) {
-            randomID = rand.nextInt(46) + 1;
+            randomID = rand.nextInt(47) + 1;
         }
         usedIDs.add(randomID); // Once a unique random ID is generated, it is added to the usedIDs set using the add() method.
 
@@ -165,7 +164,7 @@ public class QuizQuestionGenerator {
            }usedIDs.add(randomID); // Once a unique random ID is generated, it is added to the usedIDs set using the add() method.
 .*/
         Random rand = new Random();
-        int randomID = rand.nextInt(52) + 83;
+        int randomID = rand.nextInt(52) + 84;
 
         //creating statement and a resultSet
         Statement statement = conn.createStatement();
@@ -193,6 +192,46 @@ public class QuizQuestionGenerator {
         }
     }
 
+    private static void EuropeCapitals (Connection conn) throws SQLException{
+        Scanner scanner = new Scanner(System.in);
+
+        // tracking if ID is already used
+        /*   Set<Integer> usedIDs = new HashSet<>(); // will store the previously generated random IDs.
+           int randomID = rand.nextInt(42) + 137; // generate a random integer between 83 and 135 (52 + 83)
+           while (usedIDs.contains(randomID)) {
+               randomID = rand.nextInt(42) + 137;
+           }usedIDs.add(randomID); // Once a unique random ID is generated, it is added to the usedIDs set using the add() method.
+.*/
+        Random rand = new Random();
+        int randomID = rand.nextInt(42) + 137;
+
+        //creating statement and a resultSet
+        Statement statement = conn.createStatement();
+        ResultSet resultSet;
+        // selecting country, capital, and region with  random ID
+        resultSet = statement.executeQuery("SELECT Country, Capital, Region FROM countries WHERE Region = 'Europe' AND CountryID  = " + randomID);
+        resultSet.next();
+        String randomCountry = resultSet.getString("Country");
+        String randomCapital = resultSet.getString("Capital");
+
+        System.out.println("What is the capital of " + randomCountry + "?");
+
+        // Validating  user's answer. If answer is incorrect, user can check what was the correct answer
+        String userAnswer = scanner.nextLine();
+        if (userAnswer.equalsIgnoreCase(randomCapital)) {
+            System.out.println("Correct! You get 1 point");
+        } else {
+            System.out.println("Incorrect. You get 0 points. Do you want me to show the correct answer y/n?");
+            char knowCorrectAnswer = scanner.nextLine().charAt(0);
+            if (knowCorrectAnswer == 'y') {
+                System.out.println("The correct answer is " + randomCapital);
+            } else if (knowCorrectAnswer == 'n') {
+                System.out.println("OK :) We suggest you to check next question. You can do it! :)");
+            }
+        }
+    }
+
+
     private static boolean continueOrEndQuiz() {
         System.out.println("press y to continue, e - to end and check your score, m - go to menu and choose other region");
         Scanner scanner = new Scanner(System.in);
@@ -203,13 +242,13 @@ public class QuizQuestionGenerator {
             System.out.println("If you want to play again, press y ");
             return false;
         } else if (choice == 'm') {
-            System.out.println("Returning to menu. Press y confirm");
+            System.out.println("Returning to menu. Press y to confirm");
             return false;
         }
         return true;
     }
 
-    private static void quizMenu() {
+        private static void quizMenu() {
         System.out.println("Choose region: ");
         System.out.println("a - capitals of Asia");
         System.out.println("e - capitals of Europe");
