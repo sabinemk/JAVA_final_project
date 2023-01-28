@@ -51,9 +51,9 @@ public class Main {
             e.printStackTrace();
         }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
        //Scanner scanner = new Scanner(System.in);
-=======
+//=======
 
 
         /* Scanner scanner = new Scanner(System.in);
