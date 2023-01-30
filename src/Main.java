@@ -14,7 +14,7 @@ public class Main {
 
         String dbURL = "jdbc:mysql://localhost:3306/java34";
         String username = "root";
-        String password = "1234";
+        String password = "Spiegoshana";
         Scanner scanner = new Scanner(System.in);
         char again = 'y';
 
@@ -34,7 +34,7 @@ public class Main {
                     System.out.println("enter a new username");
                     String newUserName = scanner.nextLine();
 
-                    //existingUserName = scanner.nextLine();
+
                     if (database.logIn(connection, newUserName)) {
                         System.out.println("this username is taken");
                         break;

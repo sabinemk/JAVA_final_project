@@ -15,7 +15,7 @@ public class QuizQuestionGenerator {
     public static void main(String[] args) throws SQLException {
         String dbURL = "jdbc:mysql://localhost:3306/java34";
         String username = "root";
-        String password = "1234";
+        String password = "Spiegoshana";
         Scanner scanner = new Scanner(System.in);
 
 
