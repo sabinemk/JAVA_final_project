@@ -2,6 +2,8 @@ import java.sql.*;
 import java.util.*;
 
 public class QuizQuestionGenerator {
+    public static void main(String[] args) {
+    }
     // The idea behind this is:
     //Quiz can be used for learning purpose-if answer is wrong, user can choose to see correct answer
     // 1. Select table in SQL and check which ID range is assigned to Asia, South + North America and Europe
@@ -10,9 +12,11 @@ public class QuizQuestionGenerator {
 
     //QUESTIONS
     // Continue or end quiz method-throws error if I try to en program
+    // have messed up SQLException here:     public static void main(String[] args) throws SQLException ? Does this work ?   } catch (SQLException  | InputMismatchException e)
 
 
-    public static void main(String[] args) throws SQLException {
+
+    public static void main()  {
         String dbURL = "jdbc:mysql://localhost:3306/java34";
         String username = "root";
         String password = "1234";
@@ -29,8 +33,9 @@ public class QuizQuestionGenerator {
                 System.out.println("e - quit program");
 
                 char quiz = scanner.nextLine().charAt(0);
+                boolean quit = false;
 
-                if (quiz == 'q')
+                if (quiz == 'q') {
                     while (quiz == 'q') {
                         quizMenu();
 
@@ -95,16 +100,21 @@ public class QuizQuestionGenerator {
                             if (!continueOrEndQuiz(score, count)) break;
                             count++;
                         }
-                        if (!endQuiz()) break;
-
+                        if (!endQuiz()){
+                            quit =true;
+                            break;
+                        }
                     }
-                else if (quiz == 'e') {
+                    if (quit){
+                        break;
+                    }
+                }else if (quiz == 'e') {
                     System.out.println("See you next time! ");
                     break;
                 } else {    //validating variable quiz
                     System.out.println("Your input is not valid. Enter q to start quiz or e to quit");
                 }
-            } catch (SQLException | InputMismatchException e) { // //validating variable quiz, adding input mismatch exception to try catch block and scanner to read new input
+            } catch (SQLException  | InputMismatchException e) { // //validating variable quiz, adding input mismatch exception to try catch block and scanner to read new input
                 e.printStackTrace();
                 scanner.nextLine();
             }

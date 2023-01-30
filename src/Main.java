@@ -40,6 +40,7 @@ public class Main {
                     System.out.println("please, input your username");
                     String existingUserName = scanner.nextLine();
                     database.logIn(connection, existingUserName);
+                    QuizQuestionGenerator.main();
 
                 } else {
                     System.out.println("invalid input");

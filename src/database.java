@@ -3,7 +3,7 @@ import java.sql.*;
 public class database {
     private static final String dbURL = "jdbc:mysql://localhost:3306/java34";
     private static final String user ="root" ;
-    private static final String password ="Spiegoshana";
+    private static final String password ="1234";
 
 
     public static void registerUser (Connection connection, String UserName, String FullName) throws SQLException {
