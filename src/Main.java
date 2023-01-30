@@ -14,7 +14,7 @@ public class Main {
 
         String dbURL = "jdbc:mysql://localhost:3306/java34";
         String username = "root";
-        String password = "Spiegoshana";
+        String password = "1234";
         Scanner scanner = new Scanner(System.in);
         char again = 'y';
 
@@ -65,9 +65,13 @@ public class Main {
             e.printStackTrace();
         }
 
+//<<<<<<< HEAD
+       //Scanner scanner = new Scanner(System.in);
+//=======
 
 
         /* Scanner scanner = new Scanner(System.in);
+>>>>>>> 15bc0f36c2d09582c26c7584f0f0d7f0f14e875d
 
         boolean i = true;
 
