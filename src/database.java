@@ -18,30 +18,26 @@ public class database {
         if (rowInserted > 0) {
             System.out.println("user registered successfully@");
         } else {
-            System.out.println("sorry, something went wrong..");
+            System.out.println("sorry, something went wrong...");
         }
     }
 
-    public static int logIn(Connection connection, String existingUserName) throws SQLException {
+    public static boolean logIn(Connection connection, String existingUserName) throws SQLException {
 
         String sql;
         try (Connection connection1 = DriverManager.getConnection(dbURL, user, password)) {
-            sql = "SELECT UserName FROM gameUsers WHERE UserName = 'existingUserName'";
+            sql = "SELECT UserName FROM gameUsers WHERE UserName = '"+ existingUserName+ "'";
 
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
-
-            if (resultSet.next()) {
-                return resultSet.getInt(1);
-            } else {
-                return 0;
+            if(resultSet.next()){
+                return true;
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return 0;
-
-
+        return false;
     }
 
 

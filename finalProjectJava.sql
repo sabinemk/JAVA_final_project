@@ -15,7 +15,7 @@ INSERT INTO countries (Country,Capital,Region) VALUES ('Bangladesh', 'Dhaka', 'A
 INSERT INTO countries (Country,Capital,Region) VALUES ('Bhutan', 'Thimphu', 'Asia');
 INSERT INTO countries (Country,Capital,Region) VALUES ('Brunei', 'Bandar Seri Begawan', 'Asia');
 INSERT INTO countries (Country,Capital,Region) VALUES ('Cambodia', 'Phnom Penh', 'Asia');
-INSERT INTO countries (Country,Capital,Region) VALUES ('China', '	Beijing', 'Asia');
+INSERT INTO countries (Country,Capital,Region) VALUES ('China', 'Beijing', 'Asia');
 INSERT INTO countries (Country,Capital,Region) VALUES ('Georgia', 'Tbilisi', 'Asia');
 INSERT INTO countries (Country,Capital,Region) VALUES ('India', 'New Delhi', 'Asia');
 INSERT INTO countries (Country,Capital,Region) VALUES ('Indonesia', 'Jakarta', 'Asia');
@@ -170,7 +170,7 @@ INSERT INTO countries (Country,Capital,Region) VALUES ('Malta', 'Valletta', 'Eur
 INSERT INTO countries (Country,Capital,Region) VALUES ('Moldova', 'Chisinau', 'Europe');
 INSERT INTO countries (Country,Capital,Region) VALUES ('Monaco', 'Monaco', 'Europe');
 INSERT INTO countries (Country,Capital,Region) VALUES ('Montenegro', 'Podgorica', 'Europe');
-INSERT INTO countries (Country,Capital,Region) VALUES ('Netherlands', 'Amsterdam & Haag', 'Europe');
+INSERT INTO countries (Country,Capital,Region) VALUES ('Netherlands', 'Amsterdam', 'Europe');
 INSERT INTO countries (Country,Capital,Region) VALUES ('North Macedonia', '	Skopje', 'Europe');
 INSERT INTO countries (Country,Capital,Region) VALUES ('Norway', 'Oslo', 'Europe');
 INSERT INTO countries (Country,Capital,Region) VALUES ('Poland', 'Warsaw', 'Europe');
@@ -185,6 +185,7 @@ INSERT INTO countries (Country,Capital,Region) VALUES ('Sweden', 'Stockholm', 'E
 INSERT INTO countries (Country,Capital,Region) VALUES ('Switzerland', 'Bern', 'Europe');
 INSERT INTO countries (Country,Capital,Region) VALUES ('Ukraine', 'Kiev', 'Europe');
 INSERT INTO countries (Country,Capital,Region) VALUES ('United Kingdom', 'London', 'Europe');
+
 
 
 
