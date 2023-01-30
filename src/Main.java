@@ -1,20 +1,20 @@
-// <<<<<<< HEAD -  these line was imported from git and
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Objects;
 import java.util.Scanner;
-// =======
+
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-// >>>>>>> 4f7c61625014183683c9481582c1b43f3558c57d
+
 public class Main {
     public static void main(String[] args) {
 
         String dbURL = "jdbc:mysql://localhost:3306/java34";
         String username = "root";
-        String password = "Spiegoshana";
+        String password = "1234";
         Scanner scanner = new Scanner(System.in);
         char again = 'y';
 
@@ -47,11 +47,11 @@ public class Main {
 
                 } else if (action.equals("log in")) {
                     System.out.println("please, input your username");
-<<<<<<< HEAD
-                    String existingUserName = scanner.nextLine();
+
+                    existingUserName = scanner.nextLine();
                     database.logIn(connection, existingUserName);
                     QuizQuestionGenerator.main();
-=======
+
                     existingUserName = scanner.nextLine();
                     if(database.logIn(connection, existingUserName)){
                         System.out.println("You have logged in");
@@ -59,7 +59,7 @@ public class Main {
                         System.out.println("Ņot existing user");
                     }
 
->>>>>>> 00630cab88d1a88ace0aa44e34e31d7eaa5f9d79
+
 
                 } else {
                     System.out.println("invalid input");
@@ -70,37 +70,6 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-//<<<<<<< HEAD
-       //Scanner scanner = new Scanner(System.in);
-//=======
-
-
-        /* Scanner scanner = new Scanner(System.in);
->>>>>>> 15bc0f36c2d09582c26c7584f0f0d7f0f14e875d
-
-        boolean i = true;
-
-       System.out.println("Please enter your personal number");
-
-        while(i) {
-            String personalNumber = scanner.nextLine();
-
-            Pattern pattern = Pattern.compile("[0-9]{6}-[0-9]{5}");
-            Matcher matcher = pattern.matcher(personalNumber);
-
-            boolean validPersonalNumber = matcher.matches();
-
-            if (validPersonalNumber != true) {
-                System.out.println("Your inputted personal number is not valid.Enter valid personal number");
-            } else {
-                System.out.println("Please enter username");
-                String name = scanner.nextLine();
-
-            }
-        }
-
-         */
 
     }
 }

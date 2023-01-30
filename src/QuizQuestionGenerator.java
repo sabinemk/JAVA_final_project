@@ -10,16 +10,11 @@ public class QuizQuestionGenerator {
     // separate methods for each region with validation of random generated country ID (1-46 Asia, 47-82 Americas, 83-135 Africa)
 
 
-    //QUESTIONS
-    // Continue or end quiz method-throws error if I try to en program
-    // have messed up SQLException here:     public static void main(String[] args) throws SQLException ? Does this work ?   } catch (SQLException  | InputMismatchException e)
-
-
 
     public static void main()  {
         String dbURL = "jdbc:mysql://localhost:3306/java34";
         String username = "root";
-        String password = "Spiegoshana";
+        String password = "1234";
         Scanner scanner = new Scanner(System.in);
 
 
