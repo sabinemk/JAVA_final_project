@@ -31,22 +31,27 @@ public class Main {
 
                 String existingUserName;
                 if (action.equals("register")) {
-                    System.out.println("enter a new username");
+                    System.out.println("Enter a new username");
                     String newUserName = scanner.nextLine();
 
 
                     if (database.logIn(connection, newUserName)) {
+<<<<<<< HEAD
                         System.out.println("this username is taken");
                        break;
+=======
+                        System.out.println("This username is taken");
+                        break;
+>>>>>>> 2d60ce5c08ae1722266631c47fec89de1de3e987
                     }
 
-                    System.out.println("enter your full name");
+                    System.out.println("Enter your full name");
                     String newFullName = scanner.nextLine();
 
                     database.registerUser(connection, newUserName, newFullName);
 
                 } else if (action.equals("log in")) {
-                    System.out.println("please, input your username");
+                    System.out.println("Please, input your username");
 
                     existingUserName = scanner.nextLine();
                     database.logIn(connection, existingUserName);
@@ -57,13 +62,13 @@ public class Main {
                     if(database.logIn(connection, existingUserName)){
                         System.out.println("You have logged in");
                     }else {
-                        System.out.println("Ņot existing user");
+                        System.out.println("Not an existing user");
                     }
 
 
 
                 } else {
-                    System.out.println("invalid input");
+                    System.out.println("Invalid input");
                 }
 
             }
