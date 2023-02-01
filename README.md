@@ -7,7 +7,14 @@ The program is geography quiz that was created for learning purposes. The user c
 
 ✏️ Structure of the Quiz
 
-User must log in/ register and then choose the continent they want to play the quiz about. After each question there is an option to see the correct answer if the user answered incorrectly. After each question the user chooses between continuing with the same continent or check the current score and go back to the main menu (choose a different continent). There is no limit to the questions generated, the user can theoretically play for an infinite amount of time aka endless knowledge :)
+1. User must log in/ register 
+2. Choose the continent they want to play the quiz about
+2. After each question there is an option to see the correct answer if the user answered incorrectly. After each question the user also chooses between continuing with the same continent or check the current score and go back to the main menu (choose a different continent)
+3. When at the main menu again, the user either chooses a continent or ends the game
+
+
+
+*There is no limit to the questions generated, the user can theoretically play for an infinite amount of time aka endless knowledge :)
 
 
 ⚙️ Project Flowchart
