@@ -56,7 +56,7 @@ public class Main {
                     if(database.logIn(connection, existingUserName)){
                         System.out.println("You have logged in");
                     }else {
-                        System.out.println("Ņot existing user");
+                        System.out.println("Not existing user");
                     }
 
 

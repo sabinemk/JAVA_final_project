@@ -16,7 +16,7 @@ public class database {
         int rowInserted = statement.executeUpdate();
 
         if (rowInserted > 0) {
-            System.out.println("user registered successfully@");
+            System.out.println("user registered successfully!");
         } else {
             System.out.println("sorry, something went wrong...");
         }
