@@ -44,7 +44,7 @@ public class QuizQuestionGenerator {
                             try {
                                 choice = scanner.nextInt();
                                 if (choice < 1 || choice > 5) {
-                                    //throw new InputMismatchException();
+                                    throw new InputMismatchException();
                                 }
                             } catch (InputMismatchException | IndexOutOfBoundsException e) {
                                 System.out.println("You input is not valid. Please enter a valid number between 1 and 5.");

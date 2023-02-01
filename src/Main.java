@@ -36,13 +36,11 @@ public class Main {
 
 
                     if (database.logIn(connection, newUserName)) {
-<<<<<<< HEAD
-                        System.out.println("this username is taken");
-                       break;
-=======
+
+
                         System.out.println("This username is taken");
                         break;
->>>>>>> 2d60ce5c08ae1722266631c47fec89de1de3e987
+
                     }
 
                     System.out.println("Enter your full name");
