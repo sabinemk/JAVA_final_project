@@ -16,3 +16,6 @@ User must log in/ register and then choose the continent they want to play the q
 
 
 💽 Database Overview
+
+![image](https://user-images.githubusercontent.com/106809495/216075336-0a5c2fc8-b2ef-4e82-830f-16aa45fce17f.png)
+
