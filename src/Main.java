@@ -37,7 +37,7 @@ public class Main {
 
                     if (database.logIn(connection, newUserName)) {
                         System.out.println("this username is taken");
-                        break;
+                       break;
                     }
 
                     System.out.println("enter your full name");
@@ -50,7 +50,8 @@ public class Main {
 
                     existingUserName = scanner.nextLine();
                     database.logIn(connection, existingUserName);
-                    QuizQuestionGenerator.main();
+
+                    QuizQuestionGenerator.Quiz();
 
                     existingUserName = scanner.nextLine();
                     if(database.logIn(connection, existingUserName)){
@@ -64,7 +65,6 @@ public class Main {
                 } else {
                     System.out.println("invalid input");
                 }
-
 
             }
         } catch (Exception e) {

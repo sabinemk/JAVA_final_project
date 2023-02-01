@@ -3,15 +3,16 @@ import java.util.*;
 
 public class QuizQuestionGenerator {
     public static void main(String[] args) {
+     // Quiz();
     }
+
     // The idea behind this is:
     //Quiz can be used for learning purpose-if answer is wrong, user can choose to see correct answer
     // 1. Select table in SQL and check which ID range is assigned to Asia, South + North America and Europe
     // separate methods for each region with validation of random generated country ID (1-46 Asia, 47-82 Americas, 83-135 Africa)
 
 
-
-    public static void main()  {
+    public static void Quiz() {
         String dbURL = "jdbc:mysql://localhost:3306/java34";
         String username = "root";
         String password = "1234";
@@ -95,21 +96,22 @@ public class QuizQuestionGenerator {
                             if (!continueOrEndQuiz(score, count)) break;
                             count++;
                         }
-                        if (!endQuiz()){
-                            quit =true;
+                        if (!endQuiz()) {
+                            quit = true;
                             break;
                         }
                     }
-                    if (quit){
+                    if (quit) {
                         break;
                     }
-                }else if (quiz == 'e') {
+                } else if (quiz == 'e' || quiz == 'E') {
                     System.out.println("See you next time! ");
                     break;
                 } else {    //validating variable quiz
                     System.out.println("Your input is not valid. Enter q to start quiz or e to quit");
                 }
-            } catch (SQLException  | InputMismatchException e) { // //validating variable quiz, adding input mismatch exception to try catch block and scanner to read new input
+            } catch (SQLException |
+                     InputMismatchException e) { // //validating variable quiz, adding input mismatch exception to try catch block and scanner to read new input
                 e.printStackTrace();
                 scanner.nextLine();
             }
@@ -372,19 +374,19 @@ public class QuizQuestionGenerator {
 
     }
 
-    private static boolean continueOrEndQuiz(int score, int count)
-    {
-        while(true){ // added while loop to prompt user to enter a valid input c or s and prevent program from stopping if input will be invalid
+    private static boolean continueOrEndQuiz(int score, int count) {
+        while (true) { // added while loop to prompt user to enter a valid input c or s and prevent program from stopping if input will be invalid
+
             System.out.println("Enter c to continue with the same region");
             System.out.println("Enter s to check your score/ go back to menu or end quiz");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
-            if (input.matches("[cs]")) { // added regular expression validate user input
+            if (input.matches("[CcSs]")) { // added regular expression validate user input
                 char nextStep = input.charAt(0);
-                if (nextStep == 's') {
+                if (nextStep == 's' || nextStep =='S') {
                     System.out.println("You have answered: " + score + " questions out of " + count);
                     feedback(count, score);
-                    System.out.println("Enter e to end quiz or any other symbol to play again. ");
+                    System.out.println("To end quiz: press e + enter; To play again: any key + enter ");
                     return false;
                 }
                 return true;
@@ -393,6 +395,8 @@ public class QuizQuestionGenerator {
             }
         }
     }
+
+    // }
     private static void quizMenu() {
         System.out.println("Choose region: ");
         System.out.println("1 - capitals of Asia");
@@ -404,12 +408,15 @@ public class QuizQuestionGenerator {
 
     private static boolean endQuiz() {
         //System.out.println("Press e to end quiz, or any case to go back to menu");
-        Scanner scanner = new Scanner(System.in);
-        char nextStep= scanner.nextLine().charAt(0);
-        if (nextStep == 'e') {
-            System.out.println("Quiz ended. See you next time! ");
-            return false;
-        }
+        try {
+            Scanner scanner = new Scanner(System.in);
+            char nextStep = scanner.nextLine().charAt(0);
+            if (nextStep == 'e') {
+                System.out.println("Quiz ended. See you next time! ");
+                return false;
+            }
+        } catch (IndexOutOfBoundsException e) {
+          }
         return true;
     }
 
@@ -423,11 +430,16 @@ public class QuizQuestionGenerator {
         } else if (percentage >= 60 && percentage < 80) {
             System.out.println("Very good! Keep going :)");
         } else if (percentage >= 80) {
-            System.out.println("Nice result:) 80% or more questions were answered correctly! ");
+            System.out.println("Nice result:) 80% of questions or more were answered correctly! ");
         }
     }
-
 }
+
+
+
+
+
+
 
 
 
